@@ -1,0 +1,5 @@
+Credentials cache: API:1C57C339-8F4B-4E01-A8EF-1481F4CC0538
+        Principal: clbergon@42.FR
+
+  Issued                Expires               Principal
+Mar  6 12:58:52 2017  Mar 13 12:58:43 2017  krbtgt/42.FR@42.FR
