@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 11:50:00 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/08 12:23:27 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/08 19:58:58 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_print_alphabet(void)
 	ft_putchar('\n');
 }
 
-int	main(void)
+int		main(void)
 {
 	ft_print_alphabet();
 	return (0);
