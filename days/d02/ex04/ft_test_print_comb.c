@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 21:29:51 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/08 21:45:59 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/09 17:13:13 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void	ft_putnbr(int n, int o, int p)
 	ft_putchar(p + '0');
 	ft_putchar(44);
 	ft_putchar(32);
+}
+
+void	ft_end(void)
+{
+	ft_putchar('7');
+	ft_putchar('8');
+	ft_putchar('9');
+	ft_putchar('\n');
 }
 
 void	ft_print_comb(void)
@@ -51,7 +59,7 @@ void	ft_print_comb(void)
 		b = a + 1;
 		c = b + 1;
 	}
-	write(1, "789\n", 4);
+	ft_end();
 }
 
 int		main(void)
