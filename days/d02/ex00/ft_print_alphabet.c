@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 11:50:00 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/08 20:30:07 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/09 22:22:53 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_print_alphabet(void)
 		ft_putchar(a);
 		a++;
 	}
-	ft_putchar('\n');
 }
