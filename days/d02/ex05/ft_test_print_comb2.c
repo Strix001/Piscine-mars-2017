@@ -6,11 +6,16 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 21:36:01 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/09 15:23:42 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/09 15:10:56 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_putnumber(int n)
 {
@@ -51,4 +56,10 @@ void	ft_print_comb2(void)
 		b = a + 1;
 	}
 	ft_putnbr(a, b, 0);
+}
+
+int		main(void)
+{
+	ft_print_comb2();
+	return (0);
 }

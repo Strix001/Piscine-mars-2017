@@ -6,31 +6,15 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 21:36:01 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/09 15:23:42 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/08 21:38:10 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
 
-void	ft_putnumber(int n)
+void	ft_putchar(char c)
 {
-	if (n < 10)
-		ft_putchar('0');
-	else
-		ft_putchar('0' + (n / 10) % 10);
-	ft_putchar('0' + n % 10);
-}
-
-void	ft_putnbr(int a, int b, int end)
-{
-	ft_putnumber(a);
-	ft_putchar(32);
-	ft_putnumber(b);
-	if (end > 0)
-	{
-		ft_putchar(44);
-		ft_putchar(32);
-	}
+	write (1, &c, 1);
 }
 
 void	ft_print_comb2(void)
@@ -40,15 +24,28 @@ void	ft_print_comb2(void)
 
 	a = 0;
 	b = 1;
-	while (a < 98)
+	while (a <= 97 && b <= 99)
 	{
 		while (b < 100)
 		{
-			ft_putnbr(a, b, 1);
+			if (a < 10)
+				ft_putchar('0');
+			ft_putchar(a + '0');
+			ft_putchar(32);
+			if (b < 10)
+				ft_putchar('0');
+			ft_putchar(b + '0');
+			ft_putchar(44);
+			ft_putchar(32);
 			b++;
 		}
 		a++;
-		b = a + 1;
-	}
-	ft_putnbr(a, b, 0);
+	} 
+	write(1, "98 99\n", 6);
+}
+
+int	main(void)
+{
+	ft_print_comb2();
+	return (0);
 }
