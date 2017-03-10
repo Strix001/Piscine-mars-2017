@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/10 14:39:24 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/10 16:49:01 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/10 14:42:49 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/10 14:43:50 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	int	tmp_a;
-	int	tmp_b;
-
-	tmp_a = *a;
-	tmp_b = *b;
-	*a = tmp_b;
-	*b = tmp_a;
+	*div = a / b;
+	*mod = a % b;
 }

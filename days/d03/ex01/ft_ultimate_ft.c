@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 10:57:10 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/10 11:29:42 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/10 14:23:07 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,28 @@ void	ft_ultimate_ft(*********nbr)
 int		main(void)
 {
 	int	a;
-	int	*********ptr;
+	int *b;
+	int **c;
+	int ***d;
+	int ****e;
+	int	*****f;
+	int	******g;
+	int *******h;
+	int	********i;
+	int	*********j;
 
 	a = 0;
-	ptr = &a;
+	b = &a;
+	c = &b;
+	d = &c;
+	e = &d;
+	f = &e;
+	g = &f;
+	h = &g;
+	i = &h;
+	j = &i;
 	printf("%d \n", a);
-	ft_ultimate_ft(ptr);
+	ft_ultimate_ft(j);
 	printf("%d \n", a);
 	return (0);
 }
