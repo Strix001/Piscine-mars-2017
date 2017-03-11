@@ -6,18 +6,18 @@
 /*   By: cbergon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/13 16:54:20 by cbergon           #+#    #+#             */
-/*   Updated: 2016/07/13 16:56:31 by cbergon          ###   ########.fr       */
+/*   Updated: 2017/03/11 17:28:59 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int		ft_strlen(char s[])
+int		ft_strlen(char str[])
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }

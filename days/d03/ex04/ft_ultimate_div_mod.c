@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 17:11:51 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/11 17:24:09 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/11 17:07:31 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/11 17:11:14 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int	i;
+	int	tmp;
 
-	i = 0;
-	while (str[counter] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	tmp = *a;
+	*a = *a / *b;
+	*b = tmp % *b;
 }
