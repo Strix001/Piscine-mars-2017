@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush00.c                                           :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 20:32:39 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/11 22:04:18 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/12 12:06:12 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/12 12:27:49 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	rush_02(int nb_column, int nb_line)
 	{
 		if (num_line == 0)
 			ft_first_line(nb_column);
-		if (num_line > 0 && num_line < (nb_line + 1))
+		if (num_line > 0 && num_line < (nb_line - 1))
 			ft_lines(nb_column);
 		if (num_line == (nb_line - 1))
 			ft_last_line(nb_column);
@@ -84,6 +84,6 @@ void	rush_02(int nb_column, int nb_line)
 
 int		main(void)
 {
-	rush_02(2, 8);
+	rush_02(5, 8);
 	return (0);
 }
