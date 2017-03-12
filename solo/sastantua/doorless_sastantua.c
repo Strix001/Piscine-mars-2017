@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 17:54:25 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/12 22:58:03 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/12 22:54:53 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,16 @@ int		largeur_etage_i(int i)
 	return (largeur_etage_i(i - 1) + 2 * (1 + (3 + i) + ((i % 2) + (i / 2))));
 }
 
-void	etage(int hauteur, int largeur, int decallage)
+void	door(int largeur, int decallage, int size, int i, int j)
+{
+	if (i == size - 1 && i > size - 2 == 1 
+			&& j == largeur / 2 + largeur % 2 == 1)
+		ft_putchar('|');
+	else
+		ft_putchar('*');
+}
+
+void	etage(int hauteur, int largeur, int decallage, int size)
 {
 	int i;
 	int j;
@@ -37,7 +46,7 @@ void	etage(int hauteur, int largeur, int decallage)
 		ft_putchar('/');
 		while (j < largeur)
 		{
-			ft_putchar('*');
+			door(largeur, decallage, size, i, j);
 			j++;
 		}
 		ft_putchar(92);
@@ -59,7 +68,7 @@ void	sastantua(int size)
 		decallage = (largeur_etage_i(size - 1) - largeur_etage_i(i)) / 2;
 		hauteur = 3 + i;
 		largeur = largeur_etage_i(i);
-		etage(hauteur, largeur, decallage);
+		etage(hauteur, largeur, decallage, size);
 		i++;
 	}
 }
