@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 20:33:27 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/11 20:36:00 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/12 15:39:54 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/12 16:02:28 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
+void	rush(int x, int y);
 
-void	ft_putchar(char c)
+int		main(void)
 {
-	write(1, &c, 1);
+	rush(5, 8);
+	return (0);
 }
