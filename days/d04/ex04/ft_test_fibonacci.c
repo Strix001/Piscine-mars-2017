@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/11 17:51:46 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/14 00:39:10 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/13 21:18:31 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/13 21:38:13 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strrev(char *str)
+int		ft_fibonacci(int index)
 {
-	int		i;
-	int		j;
-	char	tmp;
-
-	i = 0;
-	j = 0;
-	while (str[i] != '\0')
-		i++;
-	i--;
-	while (j < i)
-	{
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
-		i--;
-		j++;
-	}
-	return (str);
+	if (index < 0)
+		return (-1);
+	if (index < 2)
+		return (index);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
 int		main(void)
 {
-	char	str1[] = "poulet";
-
-	printf("%s", ft_strrev(str1));
-	return (0);
+	printf("%d\n", ft_fibonacci(-10));
+	printf("%d\n", ft_fibonacci(0));
+	printf("%d\n", ft_fibonacci(1));
+	printf("%d\n", ft_fibonacci(3));
+	printf("%d\n", ft_fibonacci(9));
 }
