@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 17:51:46 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/11 19:29:39 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/13 13:28:38 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,11 @@ int		ft_strlen(char *str)
 
 char	*ft_strrev(char *str)
 {
-	char	*str_rev;
-	int		i;
-	int		j;
 
-	str_rev = "je suis";
-	j = 0;
-	i = ft_strlen(str) - 1;
-	while (i > 0)
-	{
-		str_rev[j] = str[i];
-		printf("%c\n", str[j]);
-		j++;
-		i--;
-	}
-	*str = *str_rev;
-	return (str_rev);
 }
 
 int		main(void)
 {
-	char	*test;
-
-	test = "jesuis";
-	ft_strrev(test);
+	ft_strrev();
+	return (0);
 }
