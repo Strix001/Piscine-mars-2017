@@ -6,11 +6,9 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 00:47:39 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/14 21:08:24 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/14 19:56:27 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_atoi(char *str)
 {	
@@ -37,11 +35,4 @@ int		ft_atoi(char *str)
 		return (-nb);
 	else
 		return (nb);
-}
-
-int		main(void)
-{
-	char	str1[] = " 123 789";
-
-	printf("%d", ft_atoi(str1));
 }
