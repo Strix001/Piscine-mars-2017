@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 00:47:39 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/14 19:50:45 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/14 13:40:35 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/14 18:39:49 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_atoi(char *str)
-{	
-	int		i;
-	int		negatif;
-	int		nb;
+void	ft_sort_integer_table(int *tab, int size)
+{
+	int n;
+	int tmp;
 
-	i = 0;
-	negatif = 0;
-	nb = 0;
-	while (str[i] < 33)
-		i++;
-	if (str[i] == 45)
-		negatif = 1;
-	if (str[i] == 45 || str[i] == 43)
-		i++;
-	while (str[i] >= 48 && str[i] <= 57)
+	n = 0;
+	while (n < size)
 	{
-		nb = nb * 10;
-		nb = nb + ((int)str[i] - 48);
-		i++;
+		if (tab[n] > tab [n + 1])
+		{
+			tmp = tab[n];
+			tab [n] = tab[n + 1];
+			tab [n + 1] = tmp;
+			n = 0;
+		}
+		else
+			n++;
 	}
-	if (negatif == 1)
-		return (-nb);
-	else
-		return (nb);
 }
 
 int		main(void)
 {
-	char	str1[] = "\0";
+	int	tab[5];
+	int i = 0;
 
-	printf("%d", ft_atoi(str1));
-}
+	tab[0] = 10;
+	tab[1] = 3;
+	tab[2] = 42;
+	tab[3] = -42;
+	tab[4] = 5;
+	ft_sort_integer_table(tab, 5);
+	while (i < 5)
+	{
+		printf("%d", tab[i]);
+		i++;
+	}
+}	
