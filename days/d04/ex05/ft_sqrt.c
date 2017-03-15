@@ -6,22 +6,21 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 21:43:52 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/14 00:44:57 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/15 15:00:03 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int		ft_sqrt(int nb)
 {
+	int	i;
 
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_sqrt());
-	printf("%d\n", ft_sqrt());
-	printf("%d\n", ft_sqrt());
-	printf("%d\n", ft_sqrt());
-	printf("%d\n", ft_sqrt());
+	i = 1;
+	while (i < 46341)
+	{
+		if (nb == i * i)
+			return (i);
+		else
+			i++;
+	}
+	return (0);
 }

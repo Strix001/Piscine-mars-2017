@@ -6,18 +6,18 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 14:01:38 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/13 15:25:16 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/15 16:44:17 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_iterative_factorial(int nb)
 {
-	int factor;
+	int result;
 	int i;
 
 	i = 1;
 	result = 1;
-	if (nb > 12 || nb < 0 )
+	if (nb > 12 || nb < 0)
 		return (0);
 	if (nb == 0)
 		return (1);

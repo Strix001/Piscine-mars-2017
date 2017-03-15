@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 14:01:38 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/13 15:24:03 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/15 18:23:09 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ int		main(void)
 	printf("%d\n", ft_iterative_factorial(0));
 	printf("%d\n", ft_iterative_factorial(1));
 	printf("%d\n", ft_iterative_factorial(12));
+	printf("%d\n", ft_iterative_factorial(13));
 }
