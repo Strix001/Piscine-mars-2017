@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   ft_generic.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/17 11:19:07 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/17 12:20:26 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/16 17:21:35 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/16 17:25:49 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_max(int *tab, int length)
-{
-	int i;
-	int tmp;
+#include <unistd.h>
 
-	i = 0;
-	while (i < (length - 1))
-	{
-		if (tab[i] < tab[i + 1])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			i = 0;
-		}
-		else
-			i++;
-	}
-	return tab[0];
+void	ft_generic(void)
+{
+	write(1, "Tu tu tu tu ; Tu tu tu tu\n", 26);
+}
+
+int		main(void)
+{
+	ft_generic();
+	return (0);
 }

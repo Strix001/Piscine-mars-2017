@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   ft_active_bits.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/17 11:19:07 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/17 12:20:26 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/17 12:40:52 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/17 13:11:13 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_max(int *tab, int length)
+unsigned int	ft_active_bits(int value)
 {
-	int i;
-	int tmp;
+	unsigned int	bits;
+	int				i;
+	int				length;
 
 	i = 0;
-	while (i < (length - 1))
+	bits = 0;
+	length = sizeof(int) * 8;
+	while (i < length)
 	{
-		if (tab[i] < tab[i + 1])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			i = 0;
-		}
-		else
-			i++;
+		bits += (value & 1) == 1;
+		value = value >> 1;
+		i++;
 	}
-	return tab[0];
+	return (bits);
 }
