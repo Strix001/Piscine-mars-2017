@@ -1,24 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_generic.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/16 17:21:35 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/16 17:25:49 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/17 14:36:06 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/17 14:56:52 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_generic(void)
+char	*ft_strstr(char *str, char *to_find)
 {
-	write(1, "Tu tu tu tu ; Tu tu tu tu\n", 26);
-}
-
-int		main(void)
-{
-	ft_generic();
-	return (0);
-}
+	char 

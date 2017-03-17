@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 11:19:07 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/17 11:34:22 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/17 15:25:00 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_max(int *tab, int length)
 		else
 			i++;
 	}
-	return tab[0];
+	return (tab[0]);
 }
 
 int		main(void)
