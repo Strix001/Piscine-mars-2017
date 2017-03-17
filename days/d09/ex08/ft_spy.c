@@ -6,15 +6,15 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 15:35:02 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/17 15:36:40 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/17 16:23:49 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int         parse_against(char *parsee, char *parsed)
+int		parse_against(char *parsee, char *parsed)
 {
-	int     i;
+	int	i;
 
 	i = 0;
 	while (*(parsee + i) != '\0' && *(parsed + i) != '\0')
@@ -28,7 +28,7 @@ int         parse_against(char *parsee, char *parsed)
 	return (1);
 }
 
-int         parse(char *str)
+int		parse(char *str)
 {
 	while (*str != '\0' && (*str == 32 || (*str > 8 && *str < 14)))
 		str++;
@@ -38,9 +38,9 @@ int         parse(char *str)
 	return (0);
 }
 
-int         main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc)

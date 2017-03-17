@@ -6,18 +6,18 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 16:04:39 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/17 16:07:39 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/17 16:19:27 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_perso.h"
 
-int     ft_atoi(char *str)
+int			ft_atoi(char *str)
 {
-	int     i;
-	int     negatif;
-	int     nb;
+	int	i;
+	int	negatif;
+	int	nb;
 
 	i = 0;
 	negatif = 0;
@@ -40,11 +40,11 @@ int     ft_atoi(char *str)
 		return (nb);
 }
 
-t_perso     *parse_perso(char **str)
+t_perso		*parse_perso(char **str)
 {
 	t_perso *ret_perso;
-	char    *beg;
-	char    *f;
+	char	*beg;
+	char	*f;
 
 	ret_perso = malloc(sizeof(t_perso));
 	ret_perso->age = ft_atoi(*str);
@@ -63,14 +63,14 @@ t_perso     *parse_perso(char **str)
 	return (ret_perso);
 }
 
-t_perso     **ft_decrypt(char *str)
+t_perso		**ft_decrypt(char *str)
 {
-	char    *beg;
-	int     len;
-	int progress;
+	char	*beg;
+	int		len;
+	int		progress;
+	t_perso **t_perso_arr;
 
 	progress = 0;
-	t_perso **t_perso_arr;
 	len = 0;
 	beg = str;
 	while (*str != '\0')
