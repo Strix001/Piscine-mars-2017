@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 17:11:51 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/11 17:24:09 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/18 17:25:56 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
-	while (str[counter] != '\0')
+	while (str[i] != '\0')
 	{
 		ft_putchar(str[i]);
 		i++;
