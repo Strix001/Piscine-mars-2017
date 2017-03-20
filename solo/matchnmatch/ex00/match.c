@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   match.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 00:47:39 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/20 15:46:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/18 22:05:58 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/19 14:26:36 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		match(char *s1, char *s2)
 {
-	int		i;
-	int		negatif;
-	int		nb;
-
-	i = 0;
-	negatif = 0;
-	nb = 0;
-	while (str[i] < 33)
-		i++;
-	if (str[i] == 45)
-		negatif = 1;
-	if (str[i] == 45 || str[i] == 43)
-		i++;
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		nb = nb * 10;
-		nb = nb + (str[i] - 48);
-		i++;
-	}
-	if (negatif == 1)
-		return (-nb);
-	else
-		return (nb);
+	if (*s1 != '\0' && *s2 == '*')
+		return (match((s1 + 1), s2) || match(s1, (s2 + 1)));
+	if (*s1 == '\0' && *s2 == '*')
+		return (match(s1, (s2 + 1)));
+	if (*s1 == *s2 && *s1 != '\0')
+		return (match((s1 + 1), (s2 + 1)));
+	if (*s1 == *s2 && *s1 == '\0')
+		return (1);
+	return (0);
 }

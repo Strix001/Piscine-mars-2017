@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 00:47:39 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/14 21:08:24 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/19 16:12:43 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_atoi(char *str)
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		nb = nb * 10;
-		nb = nb + ((int)str[i] - 48);
+		nb = nb + (str[i] - 48);
 		i++;
 	}
 	if (negatif == 1)

@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 14:36:06 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/18 21:24:13 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/20 15:49:12 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
-	int	 size_to_find;
+	int	size_to_find;
 
 	i = 0;
 	j = 0;

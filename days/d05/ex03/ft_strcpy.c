@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 23:19:37 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/14 23:21:31 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/20 15:47:16 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strcpy(char *dest, char *src)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[i] = src [i];
+		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';

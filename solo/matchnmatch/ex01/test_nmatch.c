@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncopy.c                                      :+:      :+:    :+:   */
+/*   nmatch.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 23:22:44 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/20 15:48:13 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/18 22:43:23 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/19 14:27:03 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int		nmatch(char *s1, char *s2)
 {
-	unsigned int i;
-
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (*s1 != '\0' && *s2 == '*')
+		return (nmatch((s1 + 1), s2) + nmatch(s1, (s2 + 1)));
+	if (*s1 == '\0' && *s2 == '*')
+		return (nmatch(s1, (s2 + 1)));
+	if (*s1 == *s2 && *s1 != '\0')
+		return (nmatch((s1 + 1), (s2 + 1)));
+	if (*s1 == *s2 && *s1 == '\0')
+		return (1);
+	return (0);
 }
 
 int		main(int argc, char **argv)
 {
-	char			dest[6] = "      ";
-	unsigned int	n;
-
-	n = 6;
-	if (argc == 2)
-	{
-		printf("%s\n", ft_strncpy(dest, argv[1], n));
-		printf("%s\n", strncpy(dest, argv[1], n));
-	}
-	else
+	if (argc != 3)
 		return (0);
+	return (nmatch(argv[1], argv[2]));
 }

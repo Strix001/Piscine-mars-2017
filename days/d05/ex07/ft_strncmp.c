@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncopy.c                                      :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 23:22:44 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/20 15:48:13 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/20 14:31:40 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/20 14:54:55 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
-
-	i = 0;
-	while (src[i] && i < n)
+	while (*s1 != '\0' && *s1 == *s2 && n > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		s1++;
+		s2++;
+		n--;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (*s1 - *s2);
 }
 
 int		main(int argc, char **argv)
 {
-	char			dest[6] = "      ";
-	unsigned int	n;
-
-	n = 6;
-	if (argc == 2)
+	if (argc == 3)
 	{
-		printf("%s\n", ft_strncpy(dest, argv[1], n));
-		printf("%s\n", strncpy(dest, argv[1], n));
+		printf("%d\n", strncmp(argv[1], argv[2], 20));
+		printf("%d\n", ft_strncmp(argv[1], argv[2], 20));
 	}
 	else
 		return (0);

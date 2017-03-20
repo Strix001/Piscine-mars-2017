@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 16:48:36 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/18 17:23:43 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/19 12:39:48 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 void	afficher_grille(int grille[9][9])
 {
-	int i;
-	int j;
+	int i;  // declaration des variables i et j qui correspondent a la position sur ligne
+	int j; // et position sur colonne
 
-	i = 0;
-	while (i < 9)
+	i = 0; // je commence a i = 0 (donc la premiere ligne)
+	while (i < 9) 
 	{
 		j = 0;
 		while (j < 9)
@@ -38,9 +38,9 @@ int		ft_check_row(int k, int grille[9][9], int i)
 
 	j = 0;
 	while (j < 9)
-		if (grille[i][j++] == k)
-			return (0);
-	return (1);
+		if (grille[i][j++] == k) //j'avance avec j (donc dans les colonnes
+			return (0); // pour verifier qu il n y a pas mon nombre sur la ligne i
+	return (1); // si il n y est pas je retourne 1 pour dire qu on peut tester avec le nombre teste
 }
 
 int		ft_check_col(int k, int grille[9][9], int j)
@@ -49,9 +49,9 @@ int		ft_check_col(int k, int grille[9][9], int j)
 
 	i = 0;
 	while (i < 9)
-		if (grille[i++][j] == k)
-			return (0);
-	return (1);
+		if (grille[i++][j] == k) //la je fais pareil, sur la colonne j je teste toutes les lignes 
+			return (0); // avec mon i++ pour verifier qu il n y a pas k dans la colonne j
+	return (1); // si il n y est pas je retourne 1 pour dire que je peux l y mettre et tester la suite
 }
 
 int		ft_check_block(int k, int grille[9][9], int i, int j)
@@ -59,8 +59,8 @@ int		ft_check_block(int k, int grille[9][9], int i, int j)
 	int ii;
 	int jj;
 
-	ii = i - (i % 3);
-	jj = j - (j % 3);
+	ii = i - (i % 3); //meme principe pour le cube (les grilles de sudoku sont decoupees en 9 cube de 
+	jj = j - (j % 3); // 3 par 3
 	i = ii;
 	while (i < ii + 3)
 	{
@@ -128,6 +128,6 @@ int		main(int ac, char **av)
 		}
 		i++;
 	}
-	estvalide(grille, 0);
-	afficher_grille(grille);
+	estvalide(grille, 0); //je verifie si la grille est est valide
+	afficher_grille(grille); //si elle l est je l affiche
 }
