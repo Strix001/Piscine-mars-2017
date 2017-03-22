@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/11 17:51:46 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/14 00:40:56 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int n)
+char	*ft_strrev(char *str)
 {
-	long nbr;
+	int		i;
+	int		j;
+	char	tmp;
 
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	j = 0;
+	while (str[i] != '\0')
+		i++;
+	i--;
+	while (j < i)
 	{
-		ft_putchar(45);
-		nbr = -nbr;
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i--;
+		j++;
 	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + 48);
+	return (str);
 }

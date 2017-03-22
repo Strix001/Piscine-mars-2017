@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/20 21:46:22 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/20 21:47:50 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdio.h>
 
-void	ft_putnbr(int n)
+int		ft_str_is_uppercase(char *str)
 {
-	long nbr;
+	int i;
 
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(45);
-		nbr = -nbr;
+		if (str[i] < 'A' || str[i] > 'Z')
+			return (0);
+		else
+			i++;
 	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
+	return (1);
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 2)
+		printf("%d\n", ft_str_is_uppercase(argv[1]));
 	else
-		ft_putchar(nbr + 48);
+		return (0);
 }

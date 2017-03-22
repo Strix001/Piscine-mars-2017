@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/21 16:49:20 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/21 16:49:32 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	long nbr;
+	unsigned int i;
 
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	while (src[i] && i < n)
 	{
-		ft_putchar(45);
-		nbr = -nbr;
+		dest[i] = src[i];
+		i++;
 	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + 48);
+	dest[i] = '\0';
+	return (dest);
 }

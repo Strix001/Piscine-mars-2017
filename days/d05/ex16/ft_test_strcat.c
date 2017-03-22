@@ -1,31 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 00:24:55 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 17:40:16 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/20 22:16:58 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/21 03:07:45 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char	*ft_strcat(char *dest, char *src)
 {
 	int i;
-	int size;
+	int	size;
 
 	i = 0;
 	size = 0;
 	while (dest[size] != '\0')
 		size++;
-	while (src[i] != '\0' && nb > 0)
+	while (src[i] != '\0')
 	{
 		dest[size] = src[i];
 		i++;
 		size++;
-		nb--;
 	}
 	dest[size] = '\0';
 	return (dest);
+}
+
+int		main(int argc, char **argv)
+{	
+	char *ptr;
+	char *ptr2;
+
+	ptr = malloc(100);
+	ptr2 = malloc(100);
+	strcpy(ptr, argv[1]);
+	strcpy(ptr2, argv[1]);
+
+	if (argc == 3)
+	{
+		printf("%s\n", strcat(ptr, argv[2]));
+		printf("%s\n", ft_strcat(ptr2, argv[2]));
+	}
+	else
+		return (0);
 }

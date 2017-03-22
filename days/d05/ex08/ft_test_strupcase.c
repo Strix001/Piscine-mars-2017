@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/20 16:15:17 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/20 16:57:39 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdio.h>
 
-void	ft_putnbr(int n)
+char	*ft_strupcase(char *str)
 {
-	long nbr;
+	int	i;
 
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(45);
-		nbr = -nbr;
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+			i++;
+		}
+		else
+			i++;
 	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + 48);
+	return (str);
 }
+
+int		main(int argc, char **argv)
+{
+	if (argc == 2)
+		 printf("%s\n", ft_strupcase(argv[1]));
+	else
+		return (0);
+}
+

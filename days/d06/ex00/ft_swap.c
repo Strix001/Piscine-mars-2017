@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/10 14:39:24 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/10 16:49:01 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int n)
+void	ft_swap(int *a, int *b)
 {
-	long nbr;
+	int	tmp_a;
+	int	tmp_b;
 
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar(45);
-		nbr = -nbr;
-	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + 48);
+	tmp_a = *a;
+	tmp_b = *b;
+	*a = tmp_b;
+	*b = tmp_a;
 }

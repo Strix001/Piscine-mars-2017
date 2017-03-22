@@ -6,11 +6,9 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 16:52:53 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/20 16:57:23 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:22:52 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strlowcase(char *str)
 {
@@ -28,12 +26,4 @@ char	*ft_strlowcase(char *str)
 			i++;
 	}
 	return (str);
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc == 2)
-		printf("%s\n", ft_strlowcase(argv[1]));
-	else
-		return (0);
 }

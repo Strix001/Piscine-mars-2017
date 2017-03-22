@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/20 21:49:34 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 03:42:37 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/20 17:12:34 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/21 21:29:13 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+#include <stdio.h>
+
+char	*ft_strcapitalize(char *str)
 {
 	int i;
 
 	i = 0;
+	if(str[i] <= 'z' && str[i] >= 'a')
+		str[i] -= 32;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 127 || str[i] > 32)
-			return (0);
-		else
-			i++;
+		if (str[i - 1] < 'A' || (str[i - 1] > 'Z' && str[i - 1] < 'a')
+				|| str[i - 1] > 'z')
+		{
+			if (str[i] <= 'z' && str[i] >= 'a' && (str[i - 1] < '0'
+					&& str[i] > '9'))
+				str[i] -= 32;
+		}
+		i++;
 	}
-	return (1);
+	return (str);
+}
+
+int		main(int argc, char**argv)
+{
+	if (argc == 2)
+		printf("%s\n", ft_strcapitalize(argv[1]));
+	else
+		return (0);
 }

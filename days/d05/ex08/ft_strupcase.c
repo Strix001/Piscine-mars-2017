@@ -6,11 +6,9 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 16:15:17 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/20 16:57:39 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:20:40 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strupcase(char *str)
 {
@@ -29,12 +27,3 @@ char	*ft_strupcase(char *str)
 	}
 	return (str);
 }
-
-int		main(int argc, char **argv)
-{
-	if (argc == 2)
-		 printf("%s\n", ft_strupcase(argv[1]));
-	else
-		return (0);
-}
-

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/20 14:31:40 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/20 14:54:55 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdio.h>
+#include <string.h>
 
-void	ft_putnbr(int n)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	long nbr;
-
-	nbr = n;
-	if (nbr < 0)
+	while (*s1 != '\0' && *s1 == *s2 && n > 0)
 	{
-		ft_putchar(45);
-		nbr = -nbr;
+		s1++;
+		s2++;
+		n--;
 	}
-	if (nbr > 9)
+	return (*s1 - *s2);
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 3)
 	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
+		printf("%d\n", strncmp(argv[1], argv[2], 20));
+		printf("%d\n", ft_strncmp(argv[1], argv[2], 20));
 	}
 	else
-		ft_putchar(nbr + 48);
+		return (0);
 }

@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/14 00:47:39 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/19 15:53:42 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+int		ft_atoi(char *str)
+{	
+	int		i;
+	int		negatif;
+	int		nb;
 
-void	ft_putnbr(int n)
-{
-	long nbr;
-
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	negatif = 0;
+	nb = 0;
+	while (str[i] < 33)
+		i++;
+	if (str[i] == 45)
+		negatif = 1;
+	if (str[i] == 45 || str[i] == 43)
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		ft_putchar(45);
-		nbr = -nbr;
+		nb = nb * 10;
+		nb = nb + (str[i] - 48);
+		i++;
 	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
+	if (negatif == 1)
+		return (-nb);
 	else
-		ft_putchar(nbr + 48);
+		return (nb);
 }

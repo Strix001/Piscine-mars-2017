@@ -6,9 +6,11 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 14:36:06 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 16:57:34 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/20 15:49:12 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -34,5 +36,14 @@ char	*ft_strstr(char *str, char *to_find)
 		j = 0;
 		i++;
 	}
+	return (0);
+}
+
+int		main(void)
+{
+	char	str1[] = "Hello World, poulet in your plate ...";
+	char	*to_find = "poulet";
+
+	printf("%s\n", ft_strstr(str1, to_find));
 	return (0);
 }

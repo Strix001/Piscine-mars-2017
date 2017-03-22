@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cbergon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Created: 2016/07/13 16:54:20 by cbergon           #+#    #+#             */
+/*   Updated: 2017/03/11 17:28:59 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <string.h>
 
-void	ft_putnbr(int n)
+int		ft_strlen(char str[])
 {
-	long nbr;
+	int	i;
 
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar(45);
-		nbr = -nbr;
-	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + 48);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
