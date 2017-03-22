@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/20 17:12:34 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 04:56:18 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/22 07:49:02 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/22 08:09:36 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (str[i] <= 'z' && str[i] >= 'a')
-		str[i] -= 32;
 	while (str[i] != '\0')
 	{
-		if (str[i] <= 'Z' && str[i] >= 'A')
-			str[i] += 32;
+		ft_putchar(str[i]);
 		i++;
 	}
+}
+
+int		main(int argc, char **argv)
+{
+	int		i;
+
 	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i - 1] < 'A' || (str[i - 1] > 'Z' && str[i - 1] < 'a')
-				|| str[i - 1] > 'z')
-		{
-			if (str[i] <= 'z' && str[i] >= 'a' && (str[i - 1] < '0'
-						&& str[i] > '9'))
-				str[i] -= 32;
-		}
+	if (argc == 0)
+		return (-1);
+	while (argv[i] != '\0')
 		i++;
+	i--;
+	while (i > 0)
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i--;
 	}
-	return (str);
+	return (0);
 }

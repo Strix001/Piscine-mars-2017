@@ -1,36 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/20 21:49:34 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 11:12:48 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/22 08:10:43 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/22 10:49:40 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-int		ft_str_is_printable(char *str)
+void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] > 32 && str[i] < 127)
-			return (0);
-		else
-			i++;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (1);
+}
+
+int		ft_strcmp(char *s1, char *s2)
+{
+	while (*s1 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
 int		main(int argc, char **argv)
 {
-	if (argc == 2)
-		printf("%d\n", ft_str_is_printable(argv[1]));
-	else
-		return (0);
+	int		i;
+	char	*tmp;
+
+	i = 1;
+	if (argc == 0)
+		return (-1);
+	while (i < argc && argv[i] !='\0')
+	{
+		if (argv[i] < argv[i + 1])
+		{
+			tmp = argv[i];
+			argv[i] = argv[i + 1];
+			argv[i + 1] = tmp;
+			i = 1;
+		}
+		else
+			i++;
+	}	
+	ft_putstr(argv[i]);
 }

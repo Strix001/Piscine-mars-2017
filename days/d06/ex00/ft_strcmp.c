@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 04:37:36 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 03:50:36 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/19 17:38:34 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/21 17:13:12 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int		ft_strcmp(char *s1, char *s2)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int dest_end;
-
-	i = 0;
-	j = 0;
-	while (src[j] != '\0')
-		j++;
-	while (dest[i] && i < size)
-		i++;
-	dest_end = j;
-	while (src[i - dest_end] && i < size - 1)
+	while (*s1 != '\0' && *s1 == *s2)
 	{
-		dest[i] = src[i - dest_end];
-		i++;
+		s1++;
+		s2++;
 	}
-	dest[i] = '\0';
-	return (dest_end);
+	return (*s1 - *s2);
 }

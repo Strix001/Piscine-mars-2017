@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 04:37:36 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 03:50:59 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/22 05:58:40 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int		main(int argc, char **argv)
 		return (-1);
 	else
 	{
-		printf("%lu\n", strlcpy(ptr, argv[2], (unsigned int)argv[3]));
-		printf("%u\n", ft_strlcpy(ptr2, argv[2], (unsigned int)argv[3]));
+		printf("real : %lu\n", strlcpy(ptr, argv[2], (unsigned int)argv[3]));
+		printf("custom : %u\n", ft_strlcpy(ptr2, argv[2], (unsigned int)argv[3]));
 	}
 	return (0);
 }

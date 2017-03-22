@@ -6,17 +6,17 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 17:56:18 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/21 19:28:46 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/22 03:32:23 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int nb)
 {
 	long nbr;
 
-	nbr = n;
+	nbr = nb;
 	if (nbr < 0)
 	{
 		ft_putchar(45);

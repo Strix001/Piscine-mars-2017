@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 21:49:34 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 03:42:37 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/22 11:11:58 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 127 || str[i] > 32)
+		if (str[i] > 32 && str[i] < 127)
 			return (0);
 		else
 			i++;
