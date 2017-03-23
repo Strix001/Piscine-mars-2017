@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 04:37:36 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 05:58:40 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/23 15:35:41 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	j = 0;
 	while (src[j] != '\0')
 		j++;
+	if (size < 1)
+		return (j);
 	while (dest[i] && i < size)
 		i++;
 	dest_end = j;
