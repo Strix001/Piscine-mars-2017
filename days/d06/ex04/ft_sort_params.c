@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 08:10:43 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/22 10:49:40 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/23 12:18:14 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,28 @@ int		ft_strcmp(char *s1, char *s2)
 int		main(int argc, char **argv)
 {
 	int		i;
+	int		arg;
 	char	*tmp;
 
 	i = 1;
-	if (argc == 0)
-		return (-1);
-	while (i < argc && argv[i] !='\0')
+	arg = argc - 1;
+	tmp = 0;
+	while (arg > 0)
 	{
-		if (argv[i] < argv[i + 1])
+		if (ft_strcmp(argv[arg], argv[arg - 1]) < 0)
 		{
-			tmp = argv[i];
-			argv[i] = argv[i + 1];
-			argv[i + 1] = tmp;
-			i = 1;
+			tmp = argv[arg - 1];
+			argv[arg - 1] = argv[arg];
+			argv[arg] = tmp;
+			arg = argc - 1;
 		}
 		else
-			i++;
-	}	
-	ft_putstr(argv[i]);
+			arg--;
+	}
+	while (argv[i] != '\0')
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i++;
+	}
 }
