@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/22 07:20:54 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/23 17:13:11 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/23 19:41:45 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/23 23:32:05 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int		*ft_range(int min, int max)
 {
 	int	i;
+	int	j;
+	int	*dest;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = max - min;
+	j = 0;
+	dest = malloc((i + 1) * sizeof(int));
+	if (dest == 0)
+		return (0);
+	dest[j] = min;
+	while (i > 0)
 	{
-		ft_putchar(str[i]);
-		i++;
+		printf("%d\n", j);
+		dest[j] = j + min;
+		j++;
+		i--;
 	}
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc != 0)
-	{
-		ft_putstr(argv[0]);
-		ft_putchar('\n');
-	}
-	return(0);
+	return (dest);
 }

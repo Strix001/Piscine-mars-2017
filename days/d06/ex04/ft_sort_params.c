@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 08:10:43 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/23 12:18:14 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:02:12 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		main(int argc, char **argv)
 	i = 1;
 	arg = argc - 1;
 	tmp = 0;
-	while (arg > 0)
+	while (arg > 1)
 	{
 		if (ft_strcmp(argv[arg], argv[arg - 1]) < 0)
 		{
