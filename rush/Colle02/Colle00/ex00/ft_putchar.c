@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 15:39:54 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/25 05:01:37 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/11 20:33:27 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/11 20:36:00 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_putchar(char c);
-void	rush(int x, int y);
-
-int		main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-	if(argc == 0)
-		return (-1);
-	rush(atoi(argv[1]), atoi(argv[2]));
-	return (0);
+	write(1, &c, 1);
 }

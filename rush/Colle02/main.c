@@ -5,20 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 15:39:54 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/25 05:01:37 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/25 03:11:51 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/25 03:33:14 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_colle.h"
 
-void	ft_putchar(char c);
-void	rush(int x, int y);
+char	*translate(char *tab)
+{
+	int		i;
+
+	i = read(0, tab, sizeof(char *) * 4096);
+	if (i == 0)
+		return (0);
+	else
+	{
+		tab[i] = '\0';
+		return (tab);
+	}
+}
+
+int		decode(void)
+{
+	char	*tab;
+
+	if ((tab = malloc(sizeof(char *) * 4096)) == 0)
+	{
+		return (0);
+	}
+	if (translate(tab) == '\0')
+		return (0);
+	if (find_result(tab) == 0)
+		return (0);
+	free(tab);
+	return (1);
+}
 
 int		main(int argc, char **argv)
 {
-	if(argc == 0)
-		return (-1);
-	rush(atoi(argv[1]), atoi(argv[2]));
-	return (0);
+	(void)argv;
+	if (argc != 1)
+	{
+		error();
+		return (0);
+	}
+	else
+	{
+		if (decode() == 0)
+			return (0);
+		return (0);
+	}
 }

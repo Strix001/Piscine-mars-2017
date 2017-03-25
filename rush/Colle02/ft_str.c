@@ -1,24 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fonctions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 15:39:54 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/25 05:01:37 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/25 02:11:46 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/25 03:07:16 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_putchar(char c);
-void	rush(int x, int y);
-
-int		main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-	if(argc == 0)
-		return (-1);
-	rush(atoi(argv[1]), atoi(argv[2]));
-	return (0);
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+void	ft_putnbr(int nb)
+{
+	long nbr;
+
+	nbr = nb;
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nbr = -nbr;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + '0');
 }
