@@ -12,14 +12,14 @@
 
 NAME = colle-2
 
-SRCS = choose_result.c find_result.c ft_str.c print_result.c main.c
+SRCS = choose_result.c find_result.c ft_str.c main.c
 
 COLLE = Colle00/ex00/rush00.c Colle00/ex00/rush01.c Colle00/ex00/rush02.c \
 		Colle00/ex00/rush03.c Colle00/ex00/rush04.c
 
 HDR = FT_COLLE.H
 
-OBJ = choose_result.o find_result.o ft_str.o print_result.o main.o
+OBJ = choose_result.o find_result.o ft_str.o main.o
 
 FG = gcc -Wall -Werror -Wextra
 

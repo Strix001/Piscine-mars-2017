@@ -15,13 +15,13 @@
 void	multi_result(char *tab, int x, int y)
 {
 	if (x == 1 && y == 1)
-		option_a(x, y);
+		option_a(x, y); //colle 2, 3 et 4
 	if (x > 1 && y == 1)
 		option_b(tab, x, y);
 	if (x == 1 && y > 1)
-		option_c(tab, x, y);
+		option_c(tab, x, y); //colle 2 ou 3 et 4
 	if (x > 1 && y > 1)
-		option_d(tab, x, y);
+		option_d(tab, x, y); //colle 2 ou 3 ou 4
 }
 
 int		find_y(char *tab, int y)
@@ -77,9 +77,9 @@ int		find_result(char *tab)
 	if (check(tab) == 0)
 		return (0);
 	if (tab[0] == 'o')
-		colle00(x, y);
+		print_result(x, y, 0);
 	if (tab[0] == '/')
-		colle01(x, y);
+		print_result(x, y, 1);
 	if (tab[0] == 'A')
 		multi_result(tab, x, y);
 	ft_putchar('\n');

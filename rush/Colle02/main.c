@@ -12,6 +12,17 @@
 
 #include "ft_colle.h"
 
+void	print_result(int x, int y, int a)
+{
+	ft_putstr("[colle-0");
+	ft_putnbr(a);
+	ft_putstr("] [");
+	ft_putnbr(x);
+	ft_putstr("] [");
+	ft_putnbr(y);
+	ft_putstr("]");
+}
+
 char	*translate(char *tab)
 {
 	int		i;
@@ -26,14 +37,12 @@ char	*translate(char *tab)
 	}
 }
 
-int		decode(void)
+int		allocate(void)
 {
 	char	*tab;
 
 	if ((tab = malloc(sizeof(char *) * 4096)) == 0)
-	{
 		return (0);
-	}
 	if (translate(tab) == '\0')
 		return (0);
 	if (find_result(tab) == 0)
@@ -52,7 +61,7 @@ int		main(int argc, char **argv)
 	}
 	else
 	{
-		if (decode() == 0)
+		if (allocate() == 0)
 			return (0);
 		return (0);
 	}

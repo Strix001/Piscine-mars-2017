@@ -14,45 +14,45 @@
 
 void	option_a(int x, int y)
 {
-	colle02(x, y);
+	print_result(x, y, 2);
 	ft_putstr(" || ");
-	colle03(x, y);
+	print_result(x, y, 3);
 	ft_putstr(" || ");
-	colle04(x, y);
+	print_result(x, y, 4);
 }
 
 void	option_b(char *tab, int x, int y)
 {
 	if (tab[x - 1] == 'A')
-		colle02(x, y);
+		print_result(x, y, 2);
 	else
 	{
-		colle03(x, y);
+		print_result(x, y, 3);
 		ft_putstr(" || ");
-		colle04(x, y);
+		print_result(x, y, 4);
 	}
 }
 
 void	option_c(char *tab, int x, int y)
 {
 	if (tab[y * (x + 1) - (x)] == 'A')
-		colle03(x, y);
+		print_result(x, y, 3);
 	else
 	{
-		colle02(x, y);
+		print_result(x, y, 2);
 		ft_putstr(" || ");
-		colle04(x, y);
+		print_result(x, y, 4);
 	}
 }
 
 void	option_d(char *tab, int x, int y)
 {
 	if (tab[x - 1] == 'A' && tab[y * (x - 1) - x - 1] == 'C')
-		colle02(x, y);
+		print_result(x, y, 2);
 	else if (tab[x - 1] == 'C' && tab[y * (x - 1) - x - 1] == 'A')
-		colle03(x, y);
+		print_result(x, y, 3);
 	else
-		colle04(x, y);
+		print_result(x, y, 4);
 }
 
 void	error(void)
