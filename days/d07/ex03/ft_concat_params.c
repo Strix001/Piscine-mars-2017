@@ -13,12 +13,63 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+char	*ft_strcat(char *dest, char *src)
+{
+	int i;
+	int	size;
+
+	i = 0;
+	size = 0;
+	while (dest[size] != '\0')
+		size++;
+	while (src[i] != '\0')
+	{
+		dest[size] = src[i];
+		i++;
+		size++;
+	}
+	dest[size] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	while (src[i] != '\0')
+		i++;
+	dest = malloc(i + 1);
+	if (dest == 0)
+		return (0);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
 char	*ft_concat_params(int argc, char **argv)
 {
+	int	i;
 
+	i = 1;
+	if (argc == 0)
+		return (NULL);
+	while (argv[i])
+	{
+		argv[i] = ft_strcat(argv[i - 1], argv[i]);
+		i++;
+	}
+	return (argv[i]);
 }
 
 int		main(int argc, char **argv)
 {
-
+	ft_concat_params(argc, **argv);
+	return (0);
 }

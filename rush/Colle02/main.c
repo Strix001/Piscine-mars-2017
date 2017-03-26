@@ -41,7 +41,7 @@ int		allocate(void)
 {
 	char	*tab;
 
-	if ((tab = malloc(sizeof(char *) * 4096)) == 0)
+	if ((tab = malloc(sizeof(char *) * (4096 + 1))) == 0)
 		return (0);
 	if (translate(tab) == '\0')
 		return (0);
@@ -59,10 +59,6 @@ int		main(int argc, char **argv)
 		error();
 		return (0);
 	}
-	else
-	{
-		if (allocate() == 0)
-			return (0);
+	else if (allocate() == 0)
 		return (0);
-	}
 }

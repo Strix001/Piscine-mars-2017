@@ -50,7 +50,7 @@ char	*ft_words(char *str)
 	int		j;
 	char	 *word;
 
-	i = -1;
+	i = 0;
 	printf("before j\n");
 	j = ft_strlen(str);
 	word = malloc(sizeof(char) * (ft_strlen(str) + 1));
@@ -59,6 +59,7 @@ char	*ft_words(char *str)
 	printf("I passed malloc\n");
 	while (i < ft_strlen(str))
 	{
+		printf("inwords");
 		word[i] = str[i];
 		i++;
 	}
@@ -76,10 +77,10 @@ char    **ft_split_whitespaces(char *str)
 
 	k = ft_count_words(str);
 	printf("k = %d \n", k);
-	dest = malloc(sizeof(char *) * (k + 1));
-	if (dest == 0)
+	if(!(dest = malloc(sizeof(char *) * (k + 1))))
 		return (0);
-	j = -1;
+	printf("I passed malloc twice\n");
+	j = 0;
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -89,13 +90,14 @@ char    **ft_split_whitespaces(char *str)
 			i++;
 		}
 		printf("pre-word\n");
-		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
+		if (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
 		{
+			printf("%d\n", j);
 			dest[j] = ft_words(str);
 			j++;
 			printf("%s\n", dest[j]);
 		}
-		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
+		while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
 			i++;
 	}
 	printf("dest : %s\n", dest[j]);
