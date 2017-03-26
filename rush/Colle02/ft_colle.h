@@ -23,7 +23,7 @@ void	ft_putchar(char c); //afficher character
 void	ft_putstr(char *c); //afficher chaine de character
 void	ft_putnbr(int nb); //afficher nombre
 int		main(int argc, char **argv); //erreur ou decode
-int		allocate(void); //malloc translate ou find_result puis free
+int		allocate(void); //malloc; translate ou find_result; free
 char	*translate(char *tab); //retourne 0 si i = 0 ou si tab[i] = \0
 int		check(char *tab); //verifie que les characters recus rentre dans les attendus sinon retourne error
 int		find_y(char *tab, int y); //compte le nombre de \n pour le nombre de lignes
