@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 00:33:01 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/27 10:16:23 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/27 12:09:07 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_concat_params(int argc, char **argv)
 
 	i = 2;
 	if (argc == 1)
-		return (0);
+		argv[i - 1] = ft_strcat(argv[i - 1], "\n");
 	while (argv[i])
 	{
 		argv[i] = ft_strcat(argv[i - 1], argv[i]);
