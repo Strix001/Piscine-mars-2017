@@ -37,7 +37,10 @@ char	*ft_concat_params(int argc, char **argv)
 
 	i = 2;
 	if (argc == 1)
-		return (0);
+	{
+		argv[0] = "\n";
+		return (argv[0]);
+	}
 	while (argv[i])
 	{
 		argv[i] = ft_strcat(argv[i - 1], argv[i]);
