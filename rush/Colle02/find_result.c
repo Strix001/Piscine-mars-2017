@@ -17,9 +17,9 @@ void	multi_result(char *tab, int x, int y)
 	if (x == 1 && y == 1)
 		option_a(x, y); //colle 2, 3 et 4
 	if (x > 1 && y == 1)
-		option_b(tab, x, y);
+		option_b(tab, x, y); //colle 2 ou 3 et 4
 	if (x == 1 && y > 1)
-		option_c(tab, x, y); //colle 2 ou 3 et 4
+		option_c(tab, x, y); //colle 3 ou 2 et 4
 	if (x > 1 && y > 1)
 		option_d(tab, x, y); //colle 2 ou 3 ou 4
 }

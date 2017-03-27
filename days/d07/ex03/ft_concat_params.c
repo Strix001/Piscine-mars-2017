@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 00:33:01 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/26 00:59:26 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/27 05:19:48 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strcat(char *dest, char *src)
 	size = 0;
 	while (dest[size] != '\0')
 		size++;
+	dest[size] = '\n';
+	size++;
 	while (src[i] != '\0')
 	{
 		dest[size] = src[i];
@@ -57,7 +59,7 @@ char	*ft_concat_params(int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
+	i = 2;
 	if (argc == 0)
 		return (NULL);
 	while (argv[i])
@@ -65,11 +67,11 @@ char	*ft_concat_params(int argc, char **argv)
 		argv[i] = ft_strcat(argv[i - 1], argv[i]);
 		i++;
 	}
-	return (argv[i]);
+	return (argv[i - 1]);
 }
 
 int		main(int argc, char **argv)
 {
-	ft_concat_params(argc, **argv);
+	printf("%s", ft_concat_params(argc, argv));
 	return (0);
 }

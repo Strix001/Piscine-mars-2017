@@ -6,7 +6,7 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/25 03:11:51 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/25 03:33:14 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/26 20:45:22 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		allocate(void)
 {
 	char	*tab;
 
-	if ((tab = malloc(sizeof(char *) * (4096 + 1))) == 0)
+	if ((tab = malloc(sizeof(char *) * 4096)) == 0)
 		return (0);
 	if (translate(tab) == '\0')
 		return (0);
