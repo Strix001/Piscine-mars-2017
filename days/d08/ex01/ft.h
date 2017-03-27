@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 23:36:31 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/27 07:44:07 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/27 08:01:44 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/27 08:10:29 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_H
 
-int		ft_ultimate_range(int **range, int min, int max)
-{
-	int i;
-	int	j;
-	int	*dest;
+# define FT_H
 
-	i = max - min;
-	j = 0;
-	dest = malloc(sizeof(int *) * (i + 1));
-	if (dest == 0 || min >= max )
-	{
-		range = 0;
-		return (0);
-	}
-	while (i > 0)
-	{
-		dest[j] = j + min;
-		j++;
-		i--;
-	}
-	dest[j] = '\0';
-	range = &dest;
-	return (j);
-}
+# include <unistd.h>
+
+int		ft_atoi(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+char	*ft_strrev(char *str);
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
+void	ft_putstr(char *str);
+void	ft_swap(int *a, int *b);
+
+#endif

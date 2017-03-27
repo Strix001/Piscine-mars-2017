@@ -6,12 +6,11 @@
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/26 01:00:01 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/27 07:27:59 by clbergon         ###   ########.fr       */
+/*   Updated: 2017/03/27 05:03:54 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_count_words(char *str)
 {
@@ -34,7 +33,7 @@ int		ft_count_words(char *str)
 
 int		ft_strlen(char *str)
 {
-	int		i;
+	int i;
 
 	i = 0;
 	while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
@@ -85,16 +84,4 @@ char	**ft_split_whitespaces(char *str)
 	}
 	dest[j] = 0;
 	return (dest);
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc == 0)
-		return (-1);
-	printf("%s\n", ft_split_whitespaces(argv[1])[0]);
-	printf("%s\n", ft_split_whitespaces(argv[1])[1]);
-	printf("%s\n", ft_split_whitespaces(argv[1])[2]);
-	printf("%s\n", ft_split_whitespaces(argv[1])[3]);
-	printf("%s\n", ft_split_whitespaces(argv[1])[4]);
-	return (0);
 }
