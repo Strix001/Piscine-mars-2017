@@ -38,7 +38,7 @@ char	*ft_concat_params(int argc, char **argv)
 	i = 2;
 	if (argc == 1)
 	{
-		argv[0] = "\n";
+		argv[0] = "\0";
 		return (argv[0]);
 	}
 	while (argv[i])
