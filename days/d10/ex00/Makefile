@@ -15,8 +15,8 @@ NAME = libft.a
 SRCS = ft_atoi.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_strcmp.c ft_strlen.c \
 	   ft_strrev.c ft_swap.c
 
-OBJ = ft_atoi.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_strcmp.c ft_strlen.c \
-	  ft_strrev.c ft_swap.c
+OBJ = ft_atoi.o ft_putchar.o ft_putnbr.o ft_putstr.o ft_strcmp.o ft_strlen.o \
+	  ft_strrev.o ft_swap.o
 
 FG = gcc -Wall -Werror -Wextra
 
