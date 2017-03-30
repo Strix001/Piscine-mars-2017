@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_stock_par.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clbergon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/27 18:12:55 by clbergon          #+#    #+#             */
-/*   Updated: 2017/03/30 17:02:58 by clbergon         ###   ########.fr       */
+/*   Created: 2017/03/30 17:34:29 by clbergon          #+#    #+#             */
+/*   Updated: 2017/03/30 19:35:43 by clbergon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-# include <unistd.h>
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
-# define EVEN(n) n % 2 == 0
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
 
-typedef int			t_bool;
+typedef struct		s_stock_par
+{
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}					t_stock_par;
+
+char				**ft_split_whitespaces(char *str);
+char				ft_putchar(char c);
+struct s_stock_par	*ft_param_to_tab(int ac, char **av);
+
 #endif
